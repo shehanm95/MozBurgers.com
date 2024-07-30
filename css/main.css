@@ -19,8 +19,20 @@
     color: var(--orangeFontColor);
 }
 
+.orangeBackground {
+    background-color: var(--orangeFontColor);
+}
+
 .grayFont {
     color: var(--grayFontColor);
+}
+
+.darkgrayBackground {
+    background-color: var(--grayFontColor);
+}
+
+.lightGrayBackground {
+    background-color: var(--lightGrayBackGroundColor);
 }
 
 .flex {
@@ -53,5 +65,5 @@
 }
 
 .check {
-    border: solid red 2px;
+    border: solid red 1px;
 }

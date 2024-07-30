@@ -75,12 +75,59 @@
 
         <div class="orderItem">
             <img src="images/mainMenu/item1.png" alt="item1">
-            <p class="h4">Special Berger</p>
+            <p class="itemName h4">Special Berger</p>
+            <div class="countChangeHolder">
+                <div class="countChange flex center ">
+                    <div class="m-0  plus change orangeBackground flex center">+</div>
+                    <div class="count flex center">03</div>
+                    <div class="m-0 minus change lightGrayBackground flex center">-</div>
+                </div>
+
+            </div>
+            <div class="price p-2 h2">$239</div>
         </div>
     </div>
 </body>
 
 <style>
+    .countChangeHolder {
+        flex: 1;
+    }
+
+    .countChange {
+        justify-content: end;
+
+    }
+
+    .change {
+        border-radius: 50%;
+        height: 28px;
+        width: 28px;
+        font-size: 33px;
+        font-weight: 900;
+        padding-bottom: 5px;
+    }
+
+    .count {
+        width: 41px;
+        height: 18px;
+        font-size: 12;
+        font-weight: 700;
+        background-color: var(--lightGrayBackGroundColor);
+        margin: 0 -5px;
+    }
+
+    .countChange .plus {
+        color: white;
+        z-index: 1;
+    }
+
+    .minus {
+        border: solid 2px rgba(128, 128, 128, 0.557);
+    }
+
+
+
     .clearOrder {
         right: 10px;
         position: absolute;
