@@ -9,11 +9,18 @@
     --orangePrimary: #ED8E38;
     --orangeFontColor: #F08A21;
     --lightFont: white;
+    --grayBack: #EDEDED;
+    --grayFontColor: #505050;
+    --lightGrayBackGroundColor: #E8E8E8;
 
 }
 
 .orangeFont {
     color: var(--orangeFontColor);
+}
+
+.grayFont {
+    color: var(--grayFontColor);
 }
 
 .flex {
