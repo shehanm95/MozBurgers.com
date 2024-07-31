@@ -378,7 +378,7 @@ main {
 .categoryButton img {
     width: 43px;
     height: 39px;
-    border-radius: 9px;
+    border-radius: 10px;
     background-color: white;
 }
 
