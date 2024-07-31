@@ -64,3 +64,280 @@ nav {
 /* =================================================End Nav Bar Region ============================================ */
 /* ================================================= Main Region ============================================ */
 /* ================================================= Profile Region ============================================ */
+
+.itemDisplayPane {
+    background-color: var(--lightGrayBackGroundColor);
+    height: min(90vh, 100%);
+    width: 100%;
+    border-radius: 9px;
+}
+
+.notification {
+    background-image: url(../images/mainMenu/notification.png);
+    height: 40px;
+    min-width: 40px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 3px 10px -3px 10px;
+    position: relative;
+
+}
+
+.profileText {
+    min-width: 160px;
+}
+
+.notificationDot {
+    background-color: var(--orangePrimary);
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    right: 3px;
+    top: 3px;
+    position: absolute;
+}
+
+.profile img {
+    border-radius: 50%;
+    border: 5px solid var(--orangePrimary);
+    height: 53px;
+    width: 53px;
+}
+
+.topBarSearch button img {
+    height: 34px;
+}
+
+.topBarSearch button {
+    width: 10%;
+}
+
+.topBarSearch {
+    width: 100%;
+    min-width: 200px;
+    flex-grow: 1;
+    border: 3px solid var(--grayFontColor);
+    border-radius: 9px;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.topBarSearch input {
+    width: 90%;
+    outline: none;
+    padding-left: 10px;
+    background-color: none;
+    margin: 5px;
+    border: none;
+}
+
+.topBarSearch button {
+    outline: none;
+    margin: 5px;
+    background-color: var(--lightFont);
+    border: none;
+}
+
+.addItem {
+    border: 3px solid var(--grayFontColor);
+    border-radius: 9px;
+    padding: 0 10px;
+}
+
+@media (min-width:600px) {
+    .addItem {
+        width: 300px;
+        min-height: 48px;
+    }
+}
+
+/* ===============================================================CART AREA============================= */
+
+.totalCalculation {
+    border-radius: 16px;
+    background-color: var(--lightFont);
+    padding: 18px 24px;
+    width: 90%;
+    box-shadow: 0 0 5px 0 gray;
+    margin: 10px auto;
+
+}
+
+.calcItem {
+    display: flex;
+    justify-content: space-between;
+}
+
+.calcItem p {
+    margin: 0;
+    font-weight: 700;
+}
+
+.total {
+    font-size: 28px;
+    margin-top: 9px;
+    border-top: 3px solid var(--grayFontColor);
+    padding: 0 1px;
+}
+
+.payNowButton {
+    width: 90%;
+    margin: 5px 5%;
+    display: inline-block;
+    border: none;
+    border-radius: 12px 12px 0 12px;
+
+}
+
+
+
+
+.customerDetails {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.detailSlot {
+    width: 45%;
+}
+
+.detailSlot p {
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 1px;
+    font-size: 13px;
+
+}
+
+.value {
+    color: var(--grayFontColor);
+}
+
+.value::before {
+    content: ": ";
+    color: black;
+    font-weight: 700;
+}
+
+.key {
+    width: 98px;
+}
+
+
+
+
+
+
+.divider {
+    width: 4px;
+    border-radius: 2px;
+    height: 90%;
+    background-color: var(--orangeFontColor);
+    margin: 0 5px;
+}
+
+.addCustomer,
+.searchCustomer {
+    height: 35px;
+    margin-right: 12px;
+}
+
+.nameSearchInput {
+    flex: 1;
+    margin: 0 9px;
+    outline: none;
+    border: none;
+    color: var(--orangeFontColor);
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.searchOrAddField {
+    border: solid 3px var(--orangeFontColor);
+    outline: none;
+    margin: 0 auto;
+    width: 96%;
+    height: 45px;
+    background-color: var(--lightFont);
+    border-radius: 16px;
+}
+
+.itemPane {
+    width: 100%;
+    flex: 1;
+}
+
+.countChangeHolder {
+    flex: 1;
+}
+
+.countChange {
+    justify-content: end;
+
+}
+
+.change {
+    border-radius: 50%;
+    height: 28px;
+    width: 28px;
+    font-size: 33px;
+    font-weight: 900;
+    padding-bottom: 5px;
+}
+
+.count {
+    width: 41px;
+    height: 18px;
+    font-size: 12;
+    font-weight: 700;
+    background-color: var(--lightGrayBackGroundColor);
+    margin: 0 -5px;
+}
+
+.countChange .plus {
+    color: white;
+    z-index: 1;
+}
+
+.minus {
+    border: solid 2px rgba(128, 128, 128, 0.557);
+}
+
+
+
+.clearOrder {
+    right: 10px;
+    position: absolute;
+    font-weight: 600;
+    color: var(--grayFontColor);
+}
+
+.cart {
+
+    background-color: var(--lightGrayBackGroundColor);
+    height: 98vh;
+    width: 540px;
+    border-radius: 9px;
+}
+
+.orderItem {
+    width: 491px;
+    margin: auto;
+    background-color: var(--lightFont);
+    height: 69px;
+    border-radius: 10px;
+    box-shadow: rgb(109, 109, 109) 0px 0px 5px 0px;
+    display: flex;
+    align-items: center;
+
+}
+
+.orderItem img {
+    height: 55px;
+    padding: 0 10px;
+}

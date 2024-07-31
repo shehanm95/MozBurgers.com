@@ -69,184 +69,93 @@
 
         </div>
     </main>
-    <div class="cart ms-3 position-relative mt-3">
+    <div class="cart ms-3 position-relative flex column mt-3">
         <p class="top-0 pt-1 clearOrder">clear order</p>
-        <h2 class="p-2">Invoice Number</h2>
+        <div class="invoiceArea">
+            <h2 class="p-2 d-inline-block">Invoice Number :</h2>
+            <h2 class="d-inline-block grayFont">2400012</h2>
+        </div>
 
-        <div class="orderItem">
-            <img src="images/mainMenu/item1.png" alt="item1">
-            <p class="itemName h4">Special Berger</p>
-            <div class="countChangeHolder">
-                <div class="countChange flex center ">
-                    <div class="m-0  plus change orangeBackground flex center">+</div>
-                    <div class="count flex center">03</div>
-                    <div class="m-0 minus change lightGrayBackground flex center">-</div>
+        <div class="itemPane check">
+            <div class="orderItem">
+                <img src="images/mainMenu/item1.png" alt="item1">
+                <p class="itemName h4">Special Berger</p>
+                <div class="countChangeHolder">
+                    <div class="countChange flex center ">
+                        <div class="m-0  plus change orangeBackground flex center">+</div>
+                        <div class="count flex center">03</div>
+                        <div class="m-0 minus change lightGrayBackground flex center">-</div>
+                    </div>
                 </div>
-
+                <div class="price p-2 h2">$239</div>
             </div>
-            <div class="price p-2 h2">$239</div>
+        </div>
+
+        <div class="cartBottom">
+            <div class="formField">
+                <p class="fw-bold fs-5 ms-1">select Customer</p>
+            </div>
+            <div class="searchOrAddField flex center">
+                <input class="nameSearchInput" type="text">
+                <img class="searchCustomer" src="images/vectors/search Orange-01.svg" alt="">
+                <div class="divider"></div>
+                <img class="addCustomer" src="images/vectors/add_customer_x2.svg" alt="add">
+            </div>
+
+
+            <div class="customerDetails center my-2">
+                <div class="detailSlot">
+                    <p class="key">Customer ID</p>
+                    <p class="value">C0003</p>
+                </div>
+                <div class="detailSlot">
+                    <p class="key">Town</p>
+                    <p class="value">Kalagedihena</p>
+                </div>
+                <div class="detailSlot">
+                    <p class="key">Customer Name</p>
+                    <p class="value">Charith Jayasanka</p>
+                </div>
+                <div class="detailSlot">
+                    <p class="key">Email</p>
+                    <p class="value">charith@gmail.com</p>
+                </div>
+                <div class="detailSlot">
+                    <p class="key">Phone Number</p>
+                    <p class="value">072 976 30 93</p>
+                </div>
+                <div class="detailSlot">
+                    <p class="key">Total Orders</p>
+                    <p class="value">$23 400</p>
+                </div>
+            </div>
+
+            <div class="totalCalculation">
+                <div class="calcItem">
+                    <p class="calcKey">Sub Total</p>
+                    <p class="calcvalue">540</p>
+                </div>
+                <div class="calcItem">
+                    <p class="calcKey">Discount</p>
+                    <p class="calcvalue">-50</p>
+                </div>
+                <div class="calcItem">
+                    <p class="calcKey">Tax</p>
+                    <p class="calcvalue">-50</p>
+                </div>
+                <div class="calcItem total">
+                    <p class="calcKey">Total</p>
+                    <p class="calcvalue">$ 233</p>
+                </div>
+            </div>
+            <button class="mozButton payNowButton flex center">Pay Now</button>
         </div>
     </div>
 </body>
 
 <style>
-    .countChangeHolder {
-        flex: 1;
-    }
-
-    .countChange {
-        justify-content: end;
-
-    }
-
-    .change {
-        border-radius: 50%;
-        height: 28px;
-        width: 28px;
-        font-size: 33px;
-        font-weight: 900;
-        padding-bottom: 5px;
-    }
-
-    .count {
-        width: 41px;
-        height: 18px;
-        font-size: 12;
-        font-weight: 700;
-        background-color: var(--lightGrayBackGroundColor);
-        margin: 0 -5px;
-    }
-
-    .countChange .plus {
-        color: white;
-        z-index: 1;
-    }
-
-    .minus {
-        border: solid 2px rgba(128, 128, 128, 0.557);
-    }
 
 
-
-    .clearOrder {
-        right: 10px;
-        position: absolute;
-        font-weight: 600;
-        color: var(--grayFontColor);
-    }
-
-    .cart {
-
-        background-color: var(--lightGrayBackGroundColor);
-        height: 500px;
-        width: 540px;
-        border-radius: 9px;
-    }
-
-    .orderItem {
-        width: 491px;
-        margin: auto;
-        background-color: var(--lightFont);
-        height: 69px;
-        border-radius: 10px;
-        box-shadow: rgb(109, 109, 109) 0px 0px 5px 0px;
-        display: flex;
-        align-items: center;
-
-    }
-
-    .orderItem img {
-        height: 55px;
-        padding: 0 10px;
-    }
-
-    .itemDisplayPane {
-        background-color: var(--lightGrayBackGroundColor);
-        height: min(90vh, 100%);
-        width: 100%;
-        border-radius: 9px;
-    }
-
-    .notification {
-        background-image: url(images/mainMenu/notification.png);
-        height: 40px;
-        min-width: 40px;
-        background-size: contain;
-        background-repeat: no-repeat;
-        margin: 3px 10px -3px 10px;
-        position: relative;
-
-    }
-
-    .profileText {
-        min-width: 160px;
-    }
-
-    .notificationDot {
-        background-color: var(--orangePrimary);
-        height: 15px;
-        width: 15px;
-        border-radius: 50%;
-        right: 3px;
-        top: 3px;
-        position: absolute;
-    }
-
-    .profile img {
-        border-radius: 50%;
-        border: 5px solid var(--orangePrimary);
-        height: 53px;
-        width: 53px;
-    }
-
-    .topBarSearch button img {
-        height: 34px;
-    }
-
-    .topBarSearch button {
-        width: 10%;
-    }
-
-    .topBarSearch {
-        width: 100%;
-        min-width: 200px;
-        flex-grow: 1;
-        border: 3px solid var(--grayFontColor);
-        border-radius: 9px;
-    }
-
-    main {
-        flex: 1;
-    }
-
-    .topBarSearch input {
-        width: 90%;
-        outline: none;
-        padding-left: 10px;
-        background-color: none;
-        margin: 5px;
-        border: none;
-    }
-
-    .topBarSearch button {
-        outline: none;
-        margin: 5px;
-        background-color: var(--lightFont);
-        border: none;
-    }
-
-    .addItem {
-        border: 3px solid var(--grayFontColor);
-        border-radius: 9px;
-        padding: 0 10px;
-    }
-
-    @media (min-width:600px) {
-        .addItem {
-            width: 300px;
-            min-height: 48px;
-        }
-    }
 </style>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"

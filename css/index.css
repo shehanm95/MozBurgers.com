@@ -1,0 +1,53 @@
+.loginBack {
+    background-color: var(--orangePrimary);
+    height: 100vh;
+    width: 100%;
+}
+
+.loginCard {
+    background-color: white;
+    height: 694px;
+    width: min(1200px, 100%);
+}
+
+.loginImgHolder {
+    background-image: url(../images/login/loginImage.png);
+    background-position: center;
+    background-size: cover;
+    width: 529px;
+    height: 532px;
+    border-radius: 62px 62px 0px 62px;
+    color: var(--lightFont);
+    padding: 30px;
+    margin-right: 40px;
+
+}
+
+.loginImgHolder .text p {
+    font-size: larger;
+    text-align: justify;
+}
+
+.loginImgHolder .text {
+    backdrop-filter: blur(10px);
+    padding: 5px;
+}
+
+@media (max-width: 1100px) {
+    .loginImgHolder {
+        display: none;
+    }
+}
+
+.loginForm {
+    width: min(100%, 399px);
+    height: 385px;
+    font-weight: 600;
+}
+
+.logo {
+    background-image: url(../images/login/logo.png);
+    height: 48px;
+    width: 60px;
+    background-size: cover;
+}
