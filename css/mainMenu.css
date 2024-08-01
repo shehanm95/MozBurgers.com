@@ -175,6 +175,7 @@ main {
 .calcItem p {
     margin: 0;
     font-weight: 700;
+
 }
 
 .total {
@@ -329,7 +330,7 @@ main {
 
 .orderItem {
     width: 491px;
-    margin: auto;
+    margin: 5px auto;
     background-color: var(--lightFont);
     height: 69px;
     border-radius: 10px;
@@ -344,4 +345,152 @@ main {
     padding: 0 10px;
 }
 
-/* ======================================= category buttons ======================================== */
+/* =============================================== category buttons ======================================================== */
+
+.categoryButtons {
+    background-color: var(--darkGrayBackground);
+    height: 85px;
+    margin: 15px;
+    padding: 5px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.categoryButton {
+    display: flex;
+    width: 180px;
+    height: 56px;
+    border-radius: 9px;
+    box-shadow: 0 0 9px 0 gray;
+    background-color: white;
+    padding: 6px;
+    margin: 0 5px;
+    transition: 0.4s;
+}
+
+.categoryButton:hover {
+    background-color: var(--orangePrimary);
+}
+
+.categoryButtonSelected {
+    background-color: var(--orangePrimary);
+}
+
+.categoryButton img {
+    width: 43px;
+    height: 39px;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.categoryDetails {
+    margin-left: 8px;
+}
+
+.categoryDetails p {
+    font-weight: 600;
+    font-size: 12px;
+    margin: 0;
+}
+
+.categoryDetails .categoryName {
+    font-weight: 600;
+    font-size: 15px;
+    margin: 0;
+}
+
+.categoryDetails .categoryQuantity {
+    font-weight: 600;
+    font-size: 12px;
+    color: var(--grayFont);
+    margin: 0;
+}
+
+/* ========================================================= Item Card ============================================= */
+
+.waringImage {
+    height: 22px;
+}
+
+.cardDiscount {
+    border: 3px solid var(--orangePrimary);
+    border-radius: 5px;
+    padding: 0 3px;
+    color: var(--orangePrimary);
+    margin: 0px 3px !important;
+}
+
+.cardPrice {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.warningStack {
+    flex: 1;
+    max-height: 30px;
+    overflow: hidden;
+}
+
+.priceAndCount {
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+}
+
+.ItemDescription {
+    font-size: 14px;
+    color: var(--grayFontColor);
+}
+
+.ItemName {
+    font-size: 19px;
+    font-weight: 700;
+}
+
+.itemCard p {
+    display: inline-block;
+    text-align: left;
+    margin: 0;
+}
+
+.imgAndName {
+    display: flex;
+    width: 100%;
+}
+
+.nameAndDescription {
+    height: 76px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.itmImg {
+    height: 76px;
+    width: 89px;
+    border-radius: 9px;
+    background-color: #E8E8E8;
+    display: inline-block;
+}
+
+.itemStatusDot {
+    height: 14px;
+    width: 14px;
+    border-radius: 50%;
+    background-color: orange;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+
+}
+
+.itemCard {
+    padding: 10px 5px;
+    position: relative;
+    height: 131px;
+    width: 279px;
+    background-color: var(--lightFont);
+    border-radius: 10px;
+    box-shadow: 0 0 7px 0 rgba(128, 128, 128, 0.66);
+}

@@ -40,6 +40,7 @@
 
     </nav>
     <main>
+        <!-- ==============================top bar ============================================= -->
         <div class="topbar align-center flex mt-4">
             <div class="profile me-3 flex">
                 <img class="me-3" src="images/mainMenu/person.png" alt="profilePicture">
@@ -64,8 +65,12 @@
             </div>
 
         </div>
+        <!-- ======================================== Items Display Pane ================================= -->
 
         <div class="itemDisplayPane mt-1 mt-sm-4">
+
+            <!-- ======================================== category buttons ================================= -->
+
             <div class="categoryButtons">
                 <div class="categoryButton">
                     <img src="images/mainMenu/lunch.png" alt="">
@@ -96,8 +101,49 @@
                     </div>
                 </div>
             </div>
+            <!-- ========= selected Items display final area ============================= -->
+            <h1 class="m-3">Berger Menu</h1>
+
+            <div class="selectedItemDisplayArea flex flex-wrap ps-3">
+                <div class="itemCard">
+                    <div class="itemStatusDot"></div>
+                    <div class="imgAndName">
+                        <img class="itmImg" src="images/mainMenu/item1.png" alt="item1">
+                        <div class="nameAndDescription">
+                            <p class="ItemName">Special Berger</p>
+                            <p class="ItemDescription">This is a special burger made in sri lanka</p>
+                        </div>
+                    </div>
+                    <div class="priceAndCount">
+                        <p class="cardPrice">$231</p>
+                        <p class="cardDiscount">20%</p>
+                        <div class="warningStack">
+                            <img class="waringImage" src="images/mainMenu/warningExpired.svg" alt="">
+                            <img class="waringImage" src="images/mainMenu/warningOutOfStock.svg" alt="">
+                            <img class="waringImage" src="images/mainMenu/warningNearOutOfStock.svg" alt="">
+                            <!-- <img class="waringImage" src="images/mainMenu/warningNearExapire.svg" alt=""> -->
+                        </div>
+                        <div class="countChange flex center ">
+                            <div class="m-0  plus change orangeBackground flex center">+</div>
+                            <div class="count flex center">03</div>
+                            <div class="m-0 minus change lightGrayBackground flex center">-</div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <style>
+
+            </style>
+
+
+
+
         </div>
+
     </main>
+
+    <!--=============================================== cart ==================================================== -->
     <div class="cart ms-3 position-relative flex column mt-3">
         <p class="top-0 pt-1 clearOrder">clear order</p>
         <div class="invoiceArea">
@@ -182,66 +228,7 @@
     </div>
 </body>
 
-<style>
-    .categoryButtons {
-        background-color: var(--darkGrayBackground);
-        height: 85px;
-        margin: 15px;
-        padding: 5px;
-        border-radius: 15px;
-        display: flex;
-        align-items: center;
-    }
 
-    .categoryButton {
-        display: flex;
-        width: 180px;
-        height: 56px;
-        border-radius: 9px;
-        box-shadow: 0 0 9px 0 gray;
-        background-color: white;
-        padding: 6px;
-        margin: 0 5px;
-    }
-
-    .categoryButton:hover {
-        background-color: var(--orangePrimary);
-    }
-
-    .categoryButtonSelected {
-        background-color: var(--orangePrimary);
-    }
-
-    .categoryButton img {
-        width: 43px;
-        height: 39px;
-        border-radius: 10px;
-        background-color: white;
-    }
-
-    .categoryDetails {
-        margin-left: 8px;
-    }
-
-    .categoryDetails p {
-        font-weight: 600;
-        font-size: 12px;
-        margin: 0;
-    }
-
-    .categoryDetails .categoryName {
-        font-weight: 600;
-        font-size: 15px;
-        margin: 0;
-    }
-
-    .categoryDetails .categoryQuantity {
-        font-weight: 600;
-        font-size: 12px;
-        color: var(--grayFont);
-        margin: 0;
-    }
-</style>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
     crossorigin="anonymous"></script>
