@@ -41,8 +41,28 @@
     display: flex;
 }
 
+.bottomBorder {
+    border-bottom: 3px solid gray;
+}
+
 .column {
     flex-direction: column;
+}
+
+.fw-600 {
+    font-weight: 600;
+}
+
+.fw-700 {
+    font-weight: 700;
+}
+
+.fw-800 {
+    font-weight: 800;
+}
+
+.noMarginP p {
+    margin: 0;
 }
 
 .center {
