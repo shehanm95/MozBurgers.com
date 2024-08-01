@@ -10,10 +10,120 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/mainMenu.css">
+    <link rel="stylesheet" href="css/index.css">
 
 </head>
 
 <body class="flex">
+    <div id="addCustomerWindow" class="addCustomerHolder">
+        <div class="addCustomerFormMainMenuOuter">
+            <div class="addCustomerFormAndImg">
+                <img class="addCustomerImg" src="images/mainMenu/addCustomerFormImg.png" alt="">
+                <div class="addCustomerFrom">
+                    <div onclick="toggleAddCustomerWindow()" class="customerAddFormCloseButton flex center">
+                        X
+                    </div>
+                    <div class="formCenteringFlex flex center">
+                        <form action="mainMenu.html">
+                            <div class="logoArea flex align-center">
+                                <div class="logo me-2"></div>
+                                <h2 class="fs-2">Moz Burgers</h2>
+                            </div>
+                            <p class="fs-4">Please Enter Your Login Details</p>
+
+                            <div class="formField formFieldHalf">
+                                <p>Customer name</p>
+                                <input placeholder="First Name" type="text">
+                                <input placeholder="Last Name" type="text">
+                            </div>
+                            <div class="formField">
+                                <p>Customer Email</p>
+                                <input type="email">
+                            </div>
+                            <div class="formField">
+                                <p>Customer Birth Date</p>
+                                <input type="date">
+                            </div>
+                            <div class="formField">
+                                <p>Customer Address</p>
+                                <input type="text">
+                            </div>
+                            <div class="formField">
+                                <p>Customer City</p>
+                                <input type="text">
+                            </div>
+                            <div class="formField">
+
+                                <input type="submit" class="mozButton mt-4" value="Login">
+                            </div>
+                            <h6 class="mt-2 orangeFont">Registered By : Shehan</h6>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <style>
+        .formFieldHalf input {
+            width: 48% !important;
+            margin-right: 1%;
+        }
+
+        .formCenteringFlex {
+            height: 100%;
+            width: 100%;
+        }
+
+        .customerAddFormCloseButton {
+            position: absolute;
+            background-color: var(--grayBack);
+            top: 10px;
+            right: 10px;
+            height: 30px;
+            width: 30px;
+            border-radius: 3px;
+            font-weight: 900;
+
+        }
+
+        .addCustomerFrom {
+            height: 100%px;
+            border-radius: 10px;
+            width: 423px;
+            position: relative;
+
+        }
+
+        .addCustomerImg {
+            height: 100%px;
+            border-radius: 10px;
+            margin-right: 15px;
+        }
+
+        .addCustomerFormAndImg {
+            display: flex;
+            height: 100%;
+        }
+
+        .addCustomerFormMainMenuOuter {
+            height: 700px;
+            background-color: white;
+            border-radius: 10px;
+            padding: 10px;
+        }
+
+        .addCustomerHolder {
+            /* this is only for main menu page */
+            position: absolute;
+            z-index: 2;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(105, 105, 105, 0.671);
+        }
+    </style>
     <nav class="flex column align-center">
         <div class="logoButton" onclick="goToPage('index.html')">
             <div class="logo">
@@ -132,12 +242,6 @@
                     </div>
                 </div>
             </div>
-            <style>
-
-            </style>
-
-
-
 
         </div>
 
@@ -174,7 +278,8 @@
                 <input class="nameSearchInput" type="text">
                 <img class="searchCustomer" src="images/vectors/search Orange-01.svg" alt="">
                 <div class="divider"></div>
-                <img class="addCustomer" src="images/vectors/add_customer_x2.svg" alt="add">
+                <img onclick=toggleAddCustomerWindow() class="addCustomer" src="images/vectors/add_customer_x2.svg"
+                    alt="add">
             </div>
 
 
@@ -233,5 +338,13 @@
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
     crossorigin="anonymous"></script>
 <script src="js/main.js"></script>
+<script>
+    let addCustomerWindow = document.getElementById('addCustomerWindow')
+    function toggleAddCustomerWindow() {
+        addCustomerWindow.classList.toggle("d-none")
+        console.log("customer window toggled")
+    }
+
+</script>
 
 </html>
