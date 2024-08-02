@@ -8,12 +8,13 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
+    <link rel="stylesheet" href="css/mainMenu.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/index.css">
 </head>
 
-<body class="flex center">
-    <div class="billPage">
+<body class="flex center flex-column">
+    <div class="billPage flex flex-column">
         <div class="logoAndInvoicedDesign  bottomBorder d-flex align-center justify-content-between">
             <div class="logoAndDetails">
                 <div class="InvoiceLogo flex align-center">
@@ -27,14 +28,7 @@
                 </div>
             </div>
 
-            <div class="invoiceDesign chcek d-flex">
-                <div class="orangeBackground ps-1 vrLine"></div>
-                <div class="orangeBackground ms-1 p-2 vrLine"></div>
-                <div class="orangeBackground ms-1 ps-5 pe-4 vrLine">
-                    <p class="h1 m-0 fs-1 fw-bolder">Invoice</p>
-                </div>
-
-            </div>
+            <img class="invoiceDesignSvg" src="images/payNow/invoice design-01.svg" alt="">
         </div>
 
         <div class="addresses bottomBorder d-flex justify-content-between">
@@ -55,46 +49,153 @@
 
         </div>
 
-        <div class="billTitles flex pt-1 pb-1 bottomBorder">
-            <h3 class="Item">Item</h3>
-            <h3 class="Qty">Qty</h3>
-            <h3 class="Price">Price</h3>
-            <h3 class="Rate" class="grayFont">Rate</h3>
-            <h3 class="Discount">Discount</h3>
-            <h3 class="Total">Total Amount</h3>
+        <div class="billElement flex pt-1 pb-1 bottomBorder">
+            <h3 class="cmn Item">Item</h3>
+            <h3 class="cmn alright Qty">Qty</h3>
+            <h3 class="cmn alright Price">Price</h3>
+            <h3 class="cmn alright Rate" class="grayFont">Rate</h3>
+            <h3 class="cmn alright Discount">Discount</h3>
+            <h3 class="cmn alright Total">Total</h3>
         </div>
+
+
+        <!-- Items started -->
+        <div class="billElement billDataElement">
+            <div class="Item">
+                <img src="images/mainMenu/item1.png" alt="">
+                <p>Special Burger</p>
+            </div>
+            <p class="cmn Qty">23</p>
+            <p class="cmn Price">23</p>
+            <p class="cmn Rate grayFont fw-normal rightBorder">23%</p>
+            <p class="cmn Discount  rightBorder">23</p>
+            <p class="cmn Total rightBorder me-sm-1">23</p>
+        </div>
+
+        <div class="sizer">
+
+        </div>
+
+        <!-- total calculation -->
+
+        <div class="totalCalculation">
+            <div class="calcItem">
+                <p class="calcKey">Sub Total</p>
+                <p class="calcvalue">540</p>
+            </div>
+            <div class="calcItem">
+                <p class="calcKey">Discount</p>
+                <p class="calcvalue">-50</p>
+            </div>
+            <div class="calcItem">
+                <p class="calcKey">Tax</p>
+                <p class="calcvalue">-50</p>
+            </div>
+            <div class="calcItem total">
+                <p class="calcKey">Total</p>
+                <p class="calcvalue">$ 233</p>
+            </div>
+        </div>
+
 
     </div>
 
+    <div class="finalButtons d-print-none flex justify-content-evenly">
+        <div onclick="goToPage('mainMenu.html')" class="btn orangeBackground backToMenu flex-grow-1 fw-600 fs-2">
+            Back To Main Menu
+        </div>
+        <div onclick="print()" class="btn orangeBackground print flex-grow-1 fw-600 fs-2">
+            Print
+        </div>
     </div>
 </body>
 <style>
-    .billTitles .Item {
-        min-width: 100px;
+    .finalButtons {
+        min-width: 1000px;
     }
 
-    .billTitles .Qty {
-        min-width: 100px;
+    .backToMenu {
+        width: 98%;
+        margin: 5px 5px;
     }
 
-    .billTitles .Price {
-        min-width: 100px;
+    .print {
+        width: 98%;
+        margin: 5px 5px;
     }
 
-    .billTitles .Rate {
-        min-width: 100px;
+    .rightBorder {
+        padding-right: 4px;
+        border-right: 3px solid rgb(44, 44, 44);
     }
 
-    .billTitles .Discount {
-        min-width: 100px;
+    .alright {
+        text-align: right;
     }
 
-    .billTitles .Total {
-        min-width: 100px;
+    .Item img {
+        height: 35px;
+
+    }
+
+    .billDataElement {
+        margin: 0 0 !important;
+        padding: 0px 0 !important;
+        min-height: 24px;
+    }
+
+    @media (max-width: 900px) {
+        .Item img {
+            display: none;
+
+        }
+
+    }
+
+    .Item img {
+        height: 35px;
+        margin-left: 5px;
+
+    }
+
+    .billElement h3 {
+        font-size: clamp(10px, 3vw, 2rem) !important;
+    }
+
+    .billElement .cmn {
+        min-width: 15%;
+        overflow: hidden;
+    }
+
+    .billElement .Item {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .billElement {
+        padding: 10px;
+        display: flex;
+
+    }
+
+    .billElement .cmn {
+        text-align: right;
+    }
+
+    .billElement p {
+        margin: 0;
+        font-weight: 600;
+        font-size: clamp(0.7rem, 3vmin, 3rem);
     }
 
     .addresses {
-        padding: 5px 30px 10px 30px;
+        padding: 5px 3vmin 10px 30px;
+    }
+
+    .invoiceDesignSvg {
+        width: max(20%, 100px)
     }
 
     .vrLine {
@@ -124,11 +225,30 @@
 
     .billPage {
         background-color: var(--grayBack);
-        min-height: 100vh;
+        min-height: 95vh;
         width: min(1042px, 100%);
         box-shadow: 0 0 7px 0 rgba(128, 128, 128, 0.649);
         margin: 10px;
 
+    }
+
+    .totalCalculation {
+        background-color: var(--grayBack) !important;
+        width: 98% !important;
+        padding: 1vmin !important;
+    }
+
+    .calcItem {
+        width: 100% !important;
+        margin: 0 !important;
+    }
+
+    .totalCalculation p {
+        font-size: clamp(10px, 3vmin, 1.3rem) !important;
+    }
+
+    .totalCalculation .total p {
+        font-size: clamp(16px, 12vmin, 2rem) !important;
     }
 </style>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
