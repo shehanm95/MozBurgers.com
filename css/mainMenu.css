@@ -250,6 +250,7 @@ main {
 
 .nameSearchInput {
     flex: 1;
+    width: 100px;
     margin: 0 9px;
     outline: none;
     border: none;
@@ -266,6 +267,7 @@ main {
     height: 45px;
     background-color: var(--lightFont);
     border-radius: 16px;
+    display: flex;
 }
 
 .itemPane {
@@ -276,7 +278,7 @@ main {
 }
 
 .countChangeHolder {
-    flex: 1;
+    /* flex: 1; */
 }
 
 .countChange {
@@ -329,7 +331,7 @@ main {
 }
 
 .orderItem {
-    width: 491px;
+    width: 96%;
     margin: 5px auto;
     background-color: var(--lightFont);
     height: 69px;
@@ -452,6 +454,7 @@ main {
 .ItemName {
     font-size: 19px;
     font-weight: 700;
+    flex: 1;
 }
 
 .itemCard p {
@@ -513,7 +516,7 @@ main {
     width: 100%;
 }
 
-.customerAddFormCloseButton {
+.closeButton {
     position: absolute;
     background-color: var(--grayBack);
     top: 10px;
@@ -522,6 +525,9 @@ main {
     width: 30px;
     border-radius: 3px;
     font-weight: 900;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
 }
 

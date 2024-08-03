@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moz Burgers</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/customers.css">
+    <link rel="stylesheet" href="customersCustom.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/mainMenu.css">
+    <link rel="stylesheet" href="css/menuAndCustomersResponsive.css">
+</head>
+
+<body class="flex">
+    <nav class="flex column align-center">
+        <div class="logoButton" onclick="goToPage('index.html')">
+            <div class="logo">
+            </div>
+            <h2 class="fs-6 text-center pt-0 mt-0">
+                Moz
+                <br>
+                Burgers
+            </h2>
+        </div>
+        <div onclick="goToPage('mainMenu.html')" class="navButton navButtonSelected">
+            <img src="images/vectors/vector_6_x2.svg" alt="home Icon">
+            <p>Home</p>
+        </div>
+
+        <div onclick="goToPage('customers.html')" class="navButton">
+            <img src="images/vectors/vector_5_x2.svg" class="icon" alt="home Icon">
+            <p>Customer</p>
+        </div>
+        <div class="navButton">
+            <img src="images/vectors/vector_1_x2.svg" class="icon" alt="home Icon">
+            <p>Promotion</p>
+        </div>
+
+    </nav>
+    <div id="content">
+        <div class="page">
+            <div class="wrapper">
+                <div class="addCustomerFormMainMenuOuter flex center">
+                    <div class="addCustomerFormAndImg">
+                        <img class="addCustomerImg" src="images/mainMenu/addCustomerFormImg.png" alt="">
+                        <div class="addCustomerFrom">
+                            <div class="formCenteringFlex flex center">
+                                <form action="mainMenu.html">
+                                    <div class="logoArea flex align-center">
+                                        <div class="logo me-2"></div>
+                                        <h2 class="fs-2">Moz Burgers</h2>
+                                    </div>
+                                    <p class="fs-4">Please Enter Customer Details</p>
+
+                                    <div class="formField formFieldHalf">
+                                        <p>Customer name</p>
+                                        <input placeholder="First Name" type="text">
+                                        <input placeholder="Last Name" type="text">
+                                    </div>
+                                    <div class="formField">
+                                        <p>Customer Email</p>
+                                        <input type="email">
+                                    </div>
+                                    <div class="formField">
+                                        <p>Customer Birth Date</p>
+                                        <input type="date">
+                                    </div>
+                                    <div class="formField">
+                                        <p>Customer Address</p>
+                                        <input type="text">
+                                    </div>
+                                    <div class="formField">
+                                        <p>Customer City</p>
+                                        <input type="text">
+                                    </div>
+                                    <div class="formField">
+
+                                        <input type="submit" class="mozButton mt-4" value="Login">
+                                    </div>
+                                    <h6 class="mt-2 orangeFont">Registered By : Shehan</h6>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="w-100"></div>
+                    <div class="col">
+                        <h2 class="form-title"><span>All Customers</span></h2>
+                        <div class="filter">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="filter">
+                                        <div class="search-box">
+                                            <label>Search by Keyword</label>
+                                            <input class="search" type="text" placeholder="Search">
+                                        </div>
+                                        <div class="button-set formField">
+                                            <input type="button" value="Search" class="orangeBackground"
+                                                style="color: white; width:min( 30%, 200px); float:right; margin-right:3vmin; margin-bottom: 3vmin;">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="w-100"></div>
+                                <div class="col">
+                                    <p class="a-right">10 000 Customers</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="customer-table">
+                            <table class="table">
+                                <thead>
+                                    <tr class="first">
+                                        <th>Id</th>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                        <th class="a-center">Phone</th>
+                                        <th class="a-center">Zip</th>
+                                        <th class="a-center">Country</th>
+                                        <th class="a-center">State/Province</th>
+                                        <th class="a-center">Customer Since</th>
+                                        <th class="a-center">Date of Birth</th>
+                                        <th class="a-center">Gender</th>
+                                        <th class="a-right">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Patrick J</td>
+                                        <td>patrick.j@gmail.com</td>
+                                        <td class="a-center">096 333 222</td>
+                                        <td class="a-center">12000</td>
+                                        <td class="a-center">Cambodia</td>
+                                        <td class="a-center">Phnom Penh</td>
+                                        <td class="a-center">18/08/2018 - 08:30:58 AM</td>
+                                        <td class="a-center">08/08/2000</td>
+                                        <td class="a-center">Mr</td>
+                                        <td class="a-right">
+                                            <a href="#" class="edit">Edit</a>
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="pager">
+                            <ul>
+                                <li><a href="#" class="previous">previous</a></li>
+                                <li><a href="#">1</a></li>
+                                <li><a href="#" class="active">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#">4</a></li>
+                                <li><a href="#">5</a></li>
+                                <li><a href="#" class="next">next</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<style>
+    @media (max-width:1200px) {
+        .addCustomerImg {
+            display: none;
+
+        }
+
+        .addCustomerFrom {
+            width: 90vw !important;
+            padding: 0 10px;
+        }
+
+        body,
+        html {
+            width: 100%;
+        }
+
+    }
+</style>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+<script src="js/main.js"></script>
+
+</html>

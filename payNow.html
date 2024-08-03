@@ -98,20 +98,20 @@
         </div>
 
 
+        <div class="finalButtons d-print-none flex justify-content-evenly">
+            <div onclick="goToPage('mainMenu.html')" class="btn orangeBackground backToMenu flex-grow-1 fw-600 fs-4">
+                Main Menu
+            </div>
+            <div onclick="print()" class="btn orangeBackground print flex-grow-1 fw-600 fs-4">
+                Print
+            </div>
+        </div>
     </div>
 
-    <div class="finalButtons d-print-none flex justify-content-evenly">
-        <div onclick="goToPage('mainMenu.html')" class="btn orangeBackground backToMenu flex-grow-1 fw-600 fs-2">
-            Back To Main Menu
-        </div>
-        <div onclick="print()" class="btn orangeBackground print flex-grow-1 fw-600 fs-2">
-            Print
-        </div>
-    </div>
 </body>
 <style>
     .finalButtons {
-        min-width: 1000px;
+        min-width: 100%;
     }
 
     .backToMenu {
@@ -210,7 +210,7 @@
 
 
     .InvoiceLogo img {
-        height: 71px;
+        height: clamp(28px, 10vmin, 60px);
     }
 
     .bottomBorder {
@@ -225,7 +225,7 @@
 
     .billPage {
         background-color: var(--grayBack);
-        min-height: 95vh;
+        min-height: 97vh;
         width: min(1042px, 100%);
         box-shadow: 0 0 7px 0 rgba(128, 128, 128, 0.649);
         margin: 10px;
