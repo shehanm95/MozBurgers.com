@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+    <div class="productPageHolder">
+        <div class="productDetailsOuter d-flex flex-column">
+            <h2 class="text-center p-3">Product Details</h2>
+            <div class="itemAndMainDetails d-flex justify-center">
+                <img src="images/mainMenu/item2.png" alt="product Image">
+                <div class="mainDetails h4">
+                    <div class="detailHolder">
+                        <p class="key">Name</p>
+                        <p id="productDetailName" class="val">Special Burger</p>
+                    </div>
+                    <div class="detailHolder">
+                        <p class="key">Item ID</p>
+                        <p id="productDetailId" class="val">B023</p>
+                    </div>
+                    <div class="detailHolder">
+                        <p class="key">Price</p>
+                        <p id="productDetailPrice" class="val">$ 3.45</p>
+                    </div>
+                    <div class="detailHolder">
+                        <p class="key">Discount</p>
+                        <p id="productDetailDiscount" class="val">10%</p>
+                        <p class="grayFont fs-6">(only for this stock)</p>
+                    </div>
+                    <div class="detailHolder">
+                        <p class="key">Quantity</p>
+                        <p id="productDetailQuantity" class="val">42</p>
+                    </div>
+                    <div class="detailHolder">
+                        <p class="key">Total</p>
+                        <p id="productDetailTotal" class="val">$ 234</p>
+                    </div>
+                    <div class="detailHolder">
+                        <p class="key">Description,</p>
+                        <p id="productDetailDesctipt" class="descript fs-6 d-block">this burger is special burger made
+                            in sri
+                            lanka</p>
+                    </div>
+
+
+                </div>
+
+            </div>
+            <div class="stockDetails">
+                <p class="h4">stockDetails</p>
+                <div class="stockDetailTableHolder">
+                    <table class="stockDetailTable">
+                        <th>Status</th>
+                        <th>In Date</th>
+                        <th>Expire Date</th>
+                        <th class="w-8rem">Quantity</th>
+                        <th class="w-16rem">Actions</th>
+                    </table>
+                    <table class="stockDetailTable">
+                        <td class="text-danger">Expired</td>
+                        <td>23/08/2024</td>
+                        <td>27/08/2024</td>
+                        <td class="w-8rem">20</td>
+                        <td class="w-16rem">
+                            <button class="btn btn-danger my-1" id="stockDeleteButton">Delete</button>
+                            <button class="btn btn-warning" id="addDiscountButton">Add Discount</button>
+                        </td>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <style>
+        /* stock details */
+        .stockDetails {
+            max-width: 980px;
+            margin: auto;
+            margin-top: 1.3rem;
+        }
+
+
+
+        .stockDetailTableHolder {
+            overflow-x: auto;
+            max-width: 96vw;
+            margin: auto;
+
+        }
+
+        .stockDetailTable {
+            width: 60rem;
+            table-layout: fixed;
+
+        }
+
+        .stockDetailTable th {
+            min-width: 12rem;
+            background-color: var(--grayBack);
+            text-align: center;
+            border: 1px solid black;
+            border-collapse: collapse;
+
+        }
+
+        .stockDetailTable td {
+            text-align: center;
+            width: inherit;
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        .w-16rem {
+            width: 16rem !important;
+        }
+
+        .w-8rem {
+            width: 8rem !important;
+        }
+
+        /* mainDetails */
+        .productPageHolder {
+            height: 100vh;
+            width: 100vw;
+            background-color: rgba(128, 128, 128, 0.505);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .itemAndMainDetails img {
+            border-radius: 10px;
+            width: 40%;
+        }
+
+        .mainDetails {
+            padding-left: 20px;
+            padding-top: 20px;
+        }
+
+        .productDetailsOuter {
+            max-height: 100vh;
+            overflow-y: auto;
+            width: 1029px;
+            box-shadow: 0px 0px 20px 0px rgba(123, 123, 123, 0.574);
+            background-color: white;
+
+        }
+
+        .detailHolder {
+            margin-bottom: 0.3rem;
+        }
+
+        .detailHolder p {
+            display: inline-block;
+        }
+
+        .detailHolder .key {
+            width: 110px;
+
+        }
+
+        .detailHolder .val::before {
+            content: ": ";
+
+        }
+
+        @media (max-width:1029px) {
+
+            .productDetailsOuter {
+                width: 100vw;
+            }
+
+            .itemAndMainDetails img {
+
+                width: 80%;
+            }
+
+            .itemAndMainDetails {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .mainDetails {
+                padding-left: 0;
+                padding-left: 0;
+                padding-top: 5vmin;
+                width: 90%;
+                font-size: 5vmin;
+            }
+
+            .detailHolder .key {
+                width: 20vmin;
+            }
+
+
+        }
+    </style>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+<script src="js/main.js"></script>
+
+
+</html>
