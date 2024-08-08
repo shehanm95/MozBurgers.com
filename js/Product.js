@@ -39,7 +39,7 @@ export default class Product {
         this.stocks.forEach(stock => {
             count += stock.count
         });
-
+        // checking count
         return this.count;
 
     }
