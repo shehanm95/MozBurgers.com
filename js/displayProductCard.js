@@ -1,8 +1,17 @@
+
+
+import Cart from './Cart.js';
+
+
 export default class ItemCard {
+
+    #cart = null;
     product = null;
     count = 10;
     constructor(product) {
         this.product = product;
+        this.#cart = Cart.getCart();
+
     }
 
     createElement(tag, className, innerHTML) {
@@ -64,12 +73,12 @@ export default class ItemCard {
 
         // Create count change container
         const countChange = this.createElement('div', 'countChange flex center');
-        this.plusButton = this.createElement('div', 'm-0 plus change orangeBackground flex center', '+');
+        this.plusButton = this.createElement('div', 'm-0 plus change orangeBackground flex center', 'Add To Cart');
         this.countDisplay = this.createElement('div', 'count flex center', this.product.count);
         this.minusButton = this.createElement('div', 'm-0 minus change lightGrayBackground flex center', '-');
-        countChange.appendChild(this.plusButton);
+        //countChange.appendChild(this.minusButton);
         countChange.appendChild(this.countDisplay);
-        countChange.appendChild(this.minusButton);
+        countChange.appendChild(this.plusButton);
         priceAndCount.appendChild(countChange);
         this.count = this.product.getCount();
         this.countDisplay.innerText = this.count;
@@ -79,9 +88,10 @@ export default class ItemCard {
         //this.minusButton.onclick(this.changeCountF(-1));
         //this.minusButton.onclick(this.changeCountF(1));
 
-        this.minusButton.addEventListener('click', () => {
+        this.plusButton.addEventListener('click', () => {
             if (this.count > 0) {
                 this.count--;
+                this.#cart.addProducts(this.product)
                 this.countDisplay.innerHTML = this.count;
             }
         });

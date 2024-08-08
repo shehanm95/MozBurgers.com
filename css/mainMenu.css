@@ -287,26 +287,30 @@ main {
 }
 
 .change {
-    border-radius: 50%;
+    border-radius: 3px;
     height: 28px;
-    width: 28px;
-    font-size: 33px;
+    /* width: 28px; */
+
+    font-size: 14px;
     font-weight: 900;
-    padding-bottom: 5px;
+    padding: 5px;
 }
 
 .count {
-    width: 41px;
+    width: 36px;
     height: 18px;
     font-size: 12;
-    font-weight: 700;
+    font-weight: 600;
     background-color: var(--lightGrayBackGroundColor);
     margin: 0 -5px;
+    user-select: none;
+    border-radius: 20px 0 0 20px;
 }
 
 .countChange .plus {
-    color: white;
+    color: var(--lightFont);
     z-index: 1;
+    user-select: none;
 }
 
 .minus {
@@ -340,6 +344,14 @@ main {
     display: flex;
     align-items: center;
 
+}
+
+.orderItem .countChangeHolder {
+    margin-right: 5px;
+}
+
+.itemName {
+    flex: 1;
 }
 
 .orderItem img {
@@ -457,6 +469,8 @@ main {
     font-weight: 700;
     padding-bottom: 0px;
     padding-left: 3px;
+    margin-right: auto;
+    flex-grow: 1;
 }
 
 .itemCard p {

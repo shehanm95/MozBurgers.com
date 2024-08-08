@@ -1,5 +1,7 @@
 import ItemCard from './displayProductCard.js';
 import Product from './Product.js';
+import Cart from './Cart.js';
+
 
 
 const warnings = [
@@ -17,8 +19,19 @@ const product = {
     warnings: warnings
 };
 
-let myProduct = new Product("lanka burger", 1, "images/mainMenu/item2.png", "this is second burger", 34.0, 10)
+let myProducts = [
+    new Product("Lanka Burger", 2, "images/mainMenu/item2.png", "this is second burger", 21.0, 10),
+    new Product("Indian Burger", 3, "images/mainMenu/item3.png", "this is second burger", 25.0, 8),
+    new Product("Italian Burger", 4, "images/mainMenu/item4.png", "this good berger", 56.0, 0),
+    new Product("Shehan Burger", 5, "images/mainMenu/item5.png", "new burger invented by Shehan", 45.0, 5)
 
-const itemCard = new ItemCard(myProduct);
+]
+let cartItemDisplayArea = document.getElementById('cartItemDisplayArea');
+let cart = new Cart(cartItemDisplayArea);
+
 let selectedItemDisplayArea = document.getElementById('selectedItemDisplayArea')
-selectedItemDisplayArea.appendChild(itemCard.createItemCard());
+
+myProducts.forEach(myProduct => {
+    const itemCard = new ItemCard(myProduct);
+    selectedItemDisplayArea.appendChild(itemCard.createItemCard());
+});

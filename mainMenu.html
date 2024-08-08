@@ -361,7 +361,7 @@
             <h2 class="d-inline-block grayFont">2400012</h2>
         </div>
 
-        <div class="itemPane">
+        <div id="cartItemDisplayArea" class="itemPane">
             <div class="orderItem">
                 <img src="images/mainMenu/item1.png" alt="item1">
                 <p class="itemName h4">Special Berger</p>
@@ -431,7 +431,7 @@
                 </div>
                 <div class="calcItem total">
                     <p class="calcKey">Total</p>
-                    <p class="calcvalue">$ 233</p>
+                    <p id="finalCartPrice" class="calcvalue">$ 000</p>
                 </div>
             </div>
             <button onclick="goToPage('payNow.html')" class="mozButton payNowButton flex center">Pay Now</button>
@@ -444,6 +444,7 @@
     crossorigin="anonymous"></script>
 <script src="js/main.js"></script>
 <script type="module" src="js/manager.js"></script>
+<script src="js/productDetails.js"></script>
 
 <script>
     let addCustomerWindow = document.getElementById('addCustomerWindow')

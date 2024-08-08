@@ -1,4 +1,4 @@
-
+import Cart from "./Cart.js";
 export default class Product {
 
     stocks = [];
@@ -10,6 +10,7 @@ export default class Product {
         this.discount = discount;
         this.description = description;
         this.price = price;
+        this.cart = Cart.getCart();
     }
 
     Stock = class {
@@ -38,8 +39,9 @@ export default class Product {
 
         this.stocks.forEach(stock => {
             count += stock.count
+            this.cart.addProducts(this.Product);
         });
-        // checking count
+        this.count = Math.floor(Math.random() * 10 + 4);
         return this.count;
 
     }
