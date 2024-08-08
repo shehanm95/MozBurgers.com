@@ -8,6 +8,8 @@ export default class ItemCard {
     #cart = null;
     product = null;
     count = 10;
+    nearToOutOfStock = null;
+    outOfStock = null;
     constructor(product) {
         this.product = product;
         this.#cart = Cart.getCart();
@@ -59,16 +61,21 @@ export default class ItemCard {
         const cardPrice = this.createElement('p', 'cardPrice', `$${this.product.price}`);
         const cardDiscount = this.createElement('p', 'cardDiscount', `${this.product.discount}%`);
         priceAndCount.appendChild(cardPrice);
-        priceAndCount.appendChild(cardDiscount);
+        if (this.product.discount > 0) {
+            priceAndCount.appendChild(cardDiscount);
+        }
 
         // Create warning stack
         const warningStack = this.createElement('div', 'warningStack ms-3 ms-md-0');
-        // this.product.warnings.forEach(warningSrc => {
-        //     const warningImage = this.createElement('img', 'waringImage');
-        //     warningImage.src = warningSrc;
-        //     warningImage.alt = 'warning';
-        //     warningStack.appendChild(warningImage);
-        // });
+
+        this.outOfStock = this.createElement('img', 'waringImage d-none')
+        this.outOfStock.src = 'images/mainMenu/warningOutOfStock.svg';
+        this.nearToOutOfStock = this.createElement('img', 'waringImage d-none',)
+        this.nearToOutOfStock.src = 'images/mainMenu/warningNearOutOfStock.svg';
+        warningStack.appendChild(this.outOfStock)
+        warningStack.appendChild(this.nearToOutOfStock)
+
+
         priceAndCount.appendChild(warningStack);
 
         // Create count change container
@@ -94,12 +101,27 @@ export default class ItemCard {
                 this.#cart.addProducts(this.product)
                 this.countDisplay.innerHTML = this.count;
             }
+            this.checkStockWarnings(this.count);
         });
+        this.checkStockWarnings();
 
         return itemCard;
-
-
-
     }
+
+    checkStockWarnings() {
+        if (this.count < 5 && this.count != 0) {
+            console.log("nearToOutOfStockActivated");
+            this.nearToOutOfStock.classList.add('d-inline-block');
+            this.nearToOutOfStock.classList.remove('d-none');
+        } else if (this.count == 0) {
+            this.nearToOutOfStock.classList.add('d-none');
+            this.nearToOutOfStock.classList.remove('d-inline-block');
+            this.outOfStock.classList.add('d-inline-block');
+            this.outOfStock.classList.remove('d-none');
+        }
+    }
+
+
+
 }
 

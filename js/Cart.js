@@ -51,7 +51,7 @@ export default class Cart {
         let finalPrice = 0;
 
         Array.from(prices).forEach(price => {
-            finalPrice += price.innerText;
+            finalPrice += ((price.innerText).substring(1) * 1);
         });
         //check again.
 

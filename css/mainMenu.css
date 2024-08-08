@@ -332,6 +332,9 @@ main {
     height: 98vh;
     width: 540px;
     border-radius: 9px;
+    position: fixed;
+    top: 0;
+    z-index: 2;
 }
 
 .orderItem {
@@ -350,8 +353,13 @@ main {
     margin-right: 5px;
 }
 
+.itemPrice {
+    width: 90px !important;
+    text-align: right;
+}
+
 .itemName {
-    flex: 1;
+    /* flex: 1; */
 }
 
 .orderItem img {
@@ -468,9 +476,8 @@ main {
     font-size: 19px;
     font-weight: 700;
     padding-bottom: 0px;
-    padding-left: 3px;
     margin-right: auto;
-    flex-grow: 1;
+    /* flex-grow: 1; */
 }
 
 .itemCard p {
@@ -485,6 +492,7 @@ main {
 }
 
 .nameAndDescription {
+    padding-left: 4px;
     height: 76px;
     overflow: hidden;
     display: flex;
