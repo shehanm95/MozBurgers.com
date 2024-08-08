@@ -53,6 +53,7 @@ export default class Cart {
         Array.from(prices).forEach(price => {
             finalPrice += price.innerText;
         });
+        //check again.
 
         this.finalCartPrice.innerText = ("$ " + finalPrice);
 
