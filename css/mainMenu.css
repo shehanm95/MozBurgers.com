@@ -109,12 +109,12 @@ nav {
 }
 
 .topBarSearch button {
-    width: 10%;
+    width: 44px;
 }
 
 .topBarSearch {
     width: 100%;
-    min-width: 200px;
+    min-width: 160px;
     flex-grow: 1;
     border: 3px solid var(--grayFontColor);
     border-radius: 9px;
@@ -127,7 +127,7 @@ main {
 }
 
 .topBarSearch input {
-    width: 90%;
+    flex-grow: 1;
     outline: none;
     padding-left: 10px;
     background-color: none;
@@ -358,7 +358,8 @@ main {
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
-    overflow-x: scroll;
+    overflow-x: auto;
+    overflow-y: hidden;
 
     white-space: nowrap;
 
@@ -454,7 +455,8 @@ main {
 .ItemName {
     font-size: 19px;
     font-weight: 700;
-    flex: 1;
+    padding-bottom: 0px;
+    padding-left: 3px;
 }
 
 .itemCard p {
@@ -473,6 +475,7 @@ main {
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
 }
 
 .itmImg {
@@ -499,6 +502,7 @@ main {
     position: relative;
     height: 131px;
     width: 279px;
+    margin: 5px;
     background-color: var(--lightFont);
     border-radius: 10px;
     box-shadow: 0 0 7px 0 rgba(128, 128, 128, 0.66);

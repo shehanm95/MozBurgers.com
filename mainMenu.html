@@ -12,10 +12,159 @@
     <link rel="stylesheet" href="css/mainMenu.css">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/menuAndCustomersResponsive.css">
+    <link rel="stylesheet" href="css/product.css">
 
 </head>
 
 <body class="flex">
+
+    <style>
+        .productEditOuter {
+
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 5px 0 rgba(128, 128, 128, 0.52);
+
+        }
+    </style>
+    <div id="productPageHolder" class="pageHolder d-none">
+        <div id="editProductHolder" class="editProductHolder pageHolder d-none">
+            <div id="productEditOuter" class="productEditOuter p-3 d-flex flex-column">
+                <h4 class="text-center">Product Details Edit</h4>
+                <div class="detailHolder">
+                    <p class="longKey">New Name</p>
+                    <input class="d-sm-inline-block d-block mt-2 border-1" type="text" id="newName">
+                </div>
+                <div class="detailHolder">
+                    <p class=" longKey">New Price</p>
+                    <input class="d-sm-inline-block d-block mt-2 border-1" type="text" id="newPrice">
+                </div>
+                <div class="detailHolder">
+                    <p class=" longKey">New Description</p>
+                    <input class="d-sm-inline-block d-block mt-2 border-1" type="text" id="newDescription">
+                </div>
+                <div class="buttonHolder d-flex justify-content-around">
+                    <button onclick="displayPopUp('editProductHolder')" class="btn btn-warning m-1 w-50">Cancel</button>
+                    <button onclick="displayPopUp('editProductHolder')" class="btn btn-warning m-1 w-50">Save</button>
+                </div>
+            </div>
+
+        </div>
+        <div class="productDetailsOuter d-flex flex-column">
+            <h2 class="text-center p-3">Product Details</h2>
+            <div class="itemAndMainDetails d-flex justify-center">
+                <img src="images/mainMenu/item2.png" alt="product Image">
+                <div class="mainDetails h4">
+                    <div class="detailHolder">
+                        <p class="key">Name</p>
+                        <p id="productDetailName" class="val">Special Burger</p>
+                    </div>
+                    <div class="detailHolder">
+                        <p class="key">Item ID</p>
+                        <p id="productDetailId" class="val">B023</p>
+                    </div>
+                    <div class="detailHolder">
+                        <p class="key">Price</p>
+                        <p id="productDetailPrice" class="val">$ 3.45</p>
+                    </div>
+                    <div class="detailHolder">
+                        <p class="key">Discount</p>
+                        <p id="productDetailDiscount" class="val">10%</p>
+                        <p class="grayFont fs-6">(only for this stock)</p>
+                    </div>
+                    <div class="detailHolder">
+                        <p class="key">Quantity</p>
+                        <p id="productDetailQuantity" class="val">42</p>
+                    </div>
+                    <div class="detailHolder">
+                        <p class="key">Total</p>
+                        <p id="productDetailTotal" class="val">$ 234</p>
+                    </div>
+                    <div class="detailHolder">
+                        <p class="key">Description,</p>
+                        <p id="productDetailDesctipt" class="descript fs-6 d-block">this burger is special burger made
+                            in sri
+                            lanka</p>
+                    </div>
+                    <div class="detailHolder">
+                        <button onclick="displayPopUp('editProductHolder')" class="btn btn-warning m-1">Edit
+                            Details</button>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="stockDetails">
+                <p class="h4">stockDetails</p>
+                <div class="stockDetailTableHolder">
+                    <table class="stockDetailTable">
+                        <th>Status</th>
+                        <th>In Date</th>
+                        <th>Expire Date</th>
+                        <th class="w-8rem">Quantity</th>
+                        <th class="w-16rem">Actions</th>
+                    </table>
+                    <table class="stockDetailTable">
+                        <td class="text-danger">Expired</td>
+                        <td>23/08/2024</td>
+                        <td>27/08/2024</td>
+                        <td class="w-8rem">20</td>
+                        <td class="w-16rem">
+                            <button class="btn btn-danger my-1" id="stockDeleteButton">Delete</button>
+                            <button class="btn btn-warning" id="addDiscountButton">Add Discount</button>
+                        </td>
+                    </table>
+                </div>
+            </div>
+
+            <div class="advanceSettingArea">
+                <img src="images/icons/expandButton-01.svg" onclick="expandAdvanceDetails()" id="expandButton"
+                    class="expandButton" alt="">
+                <div class="h4">Advance Setting</div>
+                <div id="expandableDiv" class="expandableDiv h4 expand">
+                    <div class="detailHolder p-1">
+                        <p class="longKey">Quantity</p>
+                        <input class="d-sm-inline-block d-block mt-2 border-1" type="number" id="addQuantity">
+                    </div>
+                    <div class="detailHolder p-1">
+                        <p class="longKey">In Price</p>
+                        <input class="d-sm-inline-block d-block mt-2 border-1" type="number" id="addInPrice">
+                    </div>
+                    <div class="detailHolder p-1">
+                        <p class="longKey">In Date</p>
+                        <input class="d-sm-inline-block d-block  border-1" type="date" id="InDate">
+                    </div>
+                    <div class="detailHolder p-1">
+                        <p class="longKey">Expire In (days)</p>
+                        <input class="d-sm-inline-block d-block  border-1" type="number" id="expiredIn">
+                    </div>
+                    <div class="formField w-75 mx-auto">
+                        <input type="submit" value="Add To Stock" class=" mozButton">
+                    </div>
+                    <hr>
+                    <div class="h4 fw-bolder">
+                        <p class="ps-1">deleting product is cause to lose your all the details about this product.</p>
+
+                        <div class="formField w-md-75">
+                            <input type="submit" value="Delete Complete Product"
+                                class="m-md-auto mb-2 mozButton bg-danger  w-md-50">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="formField w-75 mx-auto">
+                <input type="submit" onclick="displayPopUp('productPageHolder')" value="Ok, Go Back"
+                    class="m-md-2 mozButton  w-md-50">
+            </div>
+
+
+
+        </div>
+    </div>
+
     <div id="addCustomerWindow" class="addCustomerHolder  d-none">
         <div class="addCustomerFormMainMenuOuter">
             <div class="addCustomerFormAndImg">
@@ -156,13 +305,14 @@
                     </div>
                 </div>
             </div>
-            <!-- ========= selected Items display final area ============================= -->
+            <!-- ================ selected Items display final area ========================== -->
             <h1 class="m-3">Berger Menu</h1>
 
-            <div class="selectedItemDisplayArea flex justify-center justify-content-md-start flex-wrap ps-md-3">
+            <div id="selectedItemDisplayArea"
+                class="selectedItemDisplayArea flex justify-center justify-content-md-start flex-wrap ps-md-3">
                 <div class="itemCard">
                     <div class="itemStatusDot"></div>
-                    <div class="imgAndName">
+                    <div onclick="displayPopUp('productPageHolder')" class="imgAndName">
                         <img class="itmImg" src="images/mainMenu/item1.png" alt="item1">
                         <div class="nameAndDescription">
                             <p class="ItemName">Special Berger</p>
@@ -293,6 +443,8 @@
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
     crossorigin="anonymous"></script>
 <script src="js/main.js"></script>
+<script type="module" src="js/manager.js"></script>
+
 <script>
     let addCustomerWindow = document.getElementById('addCustomerWindow')
     function toggleAddCustomerWindow() {
@@ -311,6 +463,10 @@
     function displayMenu() {
 
         menu.classList.toggle('d-none');
+    }
+    function displayPopUp(elementId) {
+        let element = document.getElementById(elementId);
+        element.classList.toggle('d-none');
     }
 
 </script>

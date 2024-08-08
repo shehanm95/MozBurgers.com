@@ -11,6 +11,7 @@
 
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/product.css">
 </head>
 
 <body>
@@ -53,6 +54,7 @@
                     </div>
 
 
+
                 </div>
 
             </div>
@@ -91,8 +93,12 @@
                         <input class="d-sm-inline-block d-block mt-2 border-1" type="number" id="addQuantity">
                     </div>
                     <div class="detailHolder p-1">
-                        <p class="longKey">Expire Date</p>
-                        <input class="d-sm-inline-block d-block  border-1" type="date" id="addExpireDate">
+                        <p class="longKey">In Date</p>
+                        <input class="d-sm-inline-block d-block  border-1" type="date" id="InDate">
+                    </div>
+                    <div class="detailHolder p-1">
+                        <p class="longKey">Expire In (days)</p>
+                        <input class="d-sm-inline-block d-block  border-1" type="number" id="expiredIn">
                     </div>
                     <div class="formField w-75 mx-auto">
                         <input type="submit" value="Add To Stock" class=" mozButton">
@@ -117,184 +123,14 @@
 
         </div>
     </div>
-    <style>
-        /* advanceSettingArea */
 
-        .advanceSettingArea {
-            position: relative;
-            width: 96%;
-            margin: 15px auto;
-        }
-
-        .expandButton {
-            border: 2px solid black;
-            height: 28px;
-            width: 28px;
-            position: absolute;
-            right: 20px;
-            top: 3px;
-            padding: 4px;
-            transition: transform 1s;
-        }
-
-        .longKey {
-            width: 160px;
-        }
-
-        .expandableDiv {
-            border: 2px solid black;
-            max-height: 600px;
-            transition: max-height 0.8s;
-            overflow: hidden;
-        }
-
-        .expand {
-            max-height: 0px;
-        }
-
-        .rotate180 {
-            transform: rotateX(180deg);
-        }
-
-        /* stock details */
-        .stockDetails {
-            max-width: 980px;
-            margin: auto;
-            margin-top: 1.3rem;
-        }
-
-
-
-        .stockDetailTableHolder {
-            overflow-x: auto;
-            max-width: 96vw;
-            margin: auto;
-
-        }
-
-        .stockDetailTable {
-            width: 60rem;
-            table-layout: fixed;
-
-
-        }
-
-        .stockDetailTable th {
-            min-width: 12rem;
-            background-color: var(--grayBack);
-            text-align: center;
-            border: 1px solid black;
-            border-collapse: collapse;
-
-        }
-
-        .stockDetailTable td {
-            text-align: center;
-            width: inherit;
-            border: 1px solid black;
-            border-collapse: collapse;
-        }
-
-        .w-16rem {
-            width: 16rem !important;
-        }
-
-        .w-8rem {
-            width: 8rem !important;
-        }
-
-        /* mainDetails */
-        .productPageHolder {
-            height: 100vh;
-            width: 100vw;
-            background-color: rgba(128, 128, 128, 0.505);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .itemAndMainDetails img {
-            border-radius: 10px;
-            width: 40%;
-        }
-
-        .mainDetails {
-            padding-left: 20px;
-            padding-top: 20px;
-        }
-
-        .productDetailsOuter {
-            max-height: 100vh;
-            overflow-y: auto;
-            width: 1029px;
-            box-shadow: 0px 0px 20px 0px rgba(123, 123, 123, 0.574);
-            background-color: white;
-
-        }
-
-        .detailHolder {
-            margin-bottom: 0.3rem;
-        }
-
-        .detailHolder p {
-            display: inline-block;
-        }
-
-        .detailHolder .key {
-            width: 110px;
-
-        }
-
-        .detailHolder .val::before {
-            content: ": ";
-
-        }
-
-        @media (max-width:1029px) {
-
-            .productDetailsOuter {
-                width: 100vw;
-            }
-
-            .itemAndMainDetails img {
-
-                width: 80%;
-            }
-
-            .itemAndMainDetails {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .mainDetails {
-                padding-left: 0;
-                padding-left: 0;
-                padding-top: 5vmin;
-                width: 90%;
-                font-size: 5vmin;
-            }
-
-            .detailHolder .key {
-                width: 20vmin;
-            }
-
-
-        }
-    </style>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
     crossorigin="anonymous"></script>
 <script src="js/main.js"></script>
-<script>
-    function expandAdvanceDetails() {
-        let expandButton = document.getElementById('expandButton')
-        let expandableDiv = document.getElementById('expandableDiv')
-        expandButton.classList.toggle('rotate180')
-        expandableDiv.classList.toggle('expand')
-        console.log('expanded')
-    }
-</script>
+<script src="js/productDetails.js"></script>
+<script src="js/displayProductCard.js"></script>
 
 
 </html>
