@@ -13,7 +13,6 @@ export default class ItemCard {
     constructor(product) {
         this.product = product;
         this.#cart = Cart.getCart();
-
     }
 
     createElement(tag, className, innerHTML) {
@@ -97,28 +96,31 @@ export default class ItemCard {
 
         this.plusButton.addEventListener('click', () => {
             if (this.count > 0) {
+                this.product.count--;
                 this.count--;
-                this.#cart.addProducts(this.product)
-                this.countDisplay.innerHTML = this.count;
+                console.log("this is procutcard : " + this);
+                this.#cart.addProducts(this)
+                this.countDisplay.innerHTML = this.product.count;
             }
-            this.checkStockWarnings(this.count);
+            this.checkStockWarnings();
         });
         this.checkStockWarnings();
 
         return itemCard;
     }
 
+    update() {
+        this.countDisplay.innerHTML = this.product.count;
+        this.checkStockWarnings();
+    }
+
     checkStockWarnings() {
-        if (this.count < 5 && this.count != 0) {
-            console.log("nearToOutOfStockActivated");
-            this.nearToOutOfStock.classList.add('d-inline-block');
-            this.nearToOutOfStock.classList.remove('d-none');
-        } else if (this.count == 0) {
-            this.nearToOutOfStock.classList.add('d-none');
-            this.nearToOutOfStock.classList.remove('d-inline-block');
-            this.outOfStock.classList.add('d-inline-block');
-            this.outOfStock.classList.remove('d-none');
-        }
+        this.count = this.product.count;
+        this.nearToOutOfStock.classList.toggle('d-inline-block', this.count > 0 && this.count < 5);
+        this.nearToOutOfStock.classList.toggle('d-none', !(this.count > 0 && this.count < 5));
+
+        this.outOfStock.classList.toggle('d-inline-block', this.count === 0);
+        this.outOfStock.classList.toggle('d-none', this.count !== 0);
     }
 
 

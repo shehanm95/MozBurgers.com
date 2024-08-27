@@ -358,8 +358,8 @@ main {
     text-align: right;
 }
 
-.itemName {
-    /* flex: 1; */
+.orderItem .itemName {
+    flex: 1;
 }
 
 .orderItem img {
@@ -477,7 +477,6 @@ main {
     font-weight: 700;
     padding-bottom: 0px;
     margin-right: auto;
-    /* flex-grow: 1; */
 }
 
 .itemCard p {

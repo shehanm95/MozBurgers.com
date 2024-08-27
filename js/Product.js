@@ -15,7 +15,6 @@ export default class Product {
 
     Stock = class {
         status = "Not Expired";
-
         constructor(inDate, expiredInDays, inPrice, count) {
             this.inDate = new Date(inDate);
             this.expiredIn = expiredInDays * 24 * 60 * 60 * 1000; // Convert days to milliseconds

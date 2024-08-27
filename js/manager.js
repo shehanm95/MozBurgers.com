@@ -19,7 +19,7 @@ const product = {
     warnings: warnings
 };
 
-let myProducts = [
+let displayProduct = [
     new Product("Lanka Burger", 2, "images/mainMenu/item2.png", "this is second burger", 21.0, 10),
     new Product("Indian Burger", 3, "images/mainMenu/item3.png", "this is second burger", 25.0, 8),
     new Product("Italian Burger", 4, "images/mainMenu/item4.png", "this good berger", 56.0, 0),
@@ -31,7 +31,7 @@ let cart = new Cart(cartItemDisplayArea);
 
 let selectedItemDisplayArea = document.getElementById('selectedItemDisplayArea')
 
-myProducts.forEach(myProduct => {
+displayProduct.forEach(myProduct => {
     const itemCard = new ItemCard(myProduct);
     selectedItemDisplayArea.appendChild(itemCard.createItemCard());
 });

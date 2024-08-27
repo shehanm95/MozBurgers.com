@@ -434,7 +434,7 @@
                     <p id="finalCartPrice" class="calcvalue">$ 000</p>
                 </div>
             </div>
-            <button onclick="goToPage('payNow.html')" class="mozButton payNowButton flex center">Pay Now</button>
+            <button id="payNowButton" class="mozButton payNowButton flex center">Pay Now</button>
         </div>
         <p class="text-end pt-1 clearOrder">clear order</p>
     </div>
@@ -469,6 +469,12 @@
         let element = document.getElementById(elementId);
         element.classList.toggle('d-none');
     }
+
+    function payNowFunction() {
+        console.log("paye")
+        Cart.getCart().getCartDetails();
+    }
+
 
 </script>
 
