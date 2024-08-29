@@ -1,6 +1,9 @@
 import ItemCard from './displayProductCard.js';
 import Product from './Product.js';
 import Cart from './Cart.js';
+import CustomerController from './controllers/CustomerController.js';
+import Customer from './Customer.js';
+import CustomerSuggestionController from './CustomerSuggestionController.js';
 
 
 
@@ -35,3 +38,11 @@ displayProduct.forEach(myProduct => {
     const itemCard = new ItemCard(myProduct);
     selectedItemDisplayArea.appendChild(itemCard.createItemCard());
 });
+
+let customerSuggestion = new CustomerSuggestionController();
+let customerController = new CustomerController();
+console.log("customer list : " + customerController.customerList);
+
+customerSuggestion.input.addEventListener('keyup', customerSuggestion.filterFunction());
+customerSuggestion.input.addEventListener('change', console.log('changes'));
+console.log(customerSuggestion);

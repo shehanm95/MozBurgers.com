@@ -183,28 +183,29 @@
 
                             <div class="formField formFieldHalf">
                                 <p>Customer name</p>
-                                <input placeholder="First Name" type="text">
-                                <input placeholder="Last Name" type="text">
+                                <input id="firstName" placeholder="First Name" type="text">
+                                <input id="lastName" placeholder="Last Name" type="text">
                             </div>
                             <div class="formField">
                                 <p>Customer Email</p>
-                                <input type="email">
+                                <input id="email" type="email">
                             </div>
                             <div class="formField">
                                 <p>Customer Birth Date</p>
-                                <input type="date">
+                                <input id="birthday" type="date">
                             </div>
                             <div class="formField">
                                 <p>Customer Address</p>
-                                <input type="text">
+                                <input id="address" type="text">
                             </div>
                             <div class="formField">
                                 <p>Customer City</p>
-                                <input type="text">
+                                <input id="city" type="text">
                             </div>
                             <div class="formField">
 
-                                <input type="submit" class="mozButton mt-4" value="Login">
+                                <input type="button" id="registerCustomer" class="mozButton mt-4"
+                                    value="Register Customer">
                             </div>
                             <h6 class="mt-2 orangeFont">Registered By : Shehan</h6>
                         </form>
@@ -381,7 +382,24 @@
                 <p class="fw-bold fs-5 ms-1">select Customer</p>
             </div>
             <div class="check searchOrAddField flex center">
-                <input class="nameSearchInput " type="text">
+                <!-- <input class="nameSearchInput " type="text"> -->
+
+                <!-- start -->
+
+                <div style="width: 100%;">
+                    <input type="text" class="nameSearchInput" id="searchInput" placeholder="Search Customers">
+                    <div id="dropdownContent" class="dropdown-content">
+                        <template data-customer-name-template>
+                            <div data-name>Volvo</div>
+                        </template>
+                        <!-- <div onclick="selectOption('Saab')">Saab</div>
+                        <div onclick="selectOption('Mercedes')">Mercedes</div>
+                        <div onclick="selectOption('Audi')">Audi</div> -->
+                    </div>
+                </div>
+
+
+                <!-- end -->
                 <img class="searchCustomer" src="images/vectors/search Orange-01.svg" alt="">
                 <div class="divider"></div>
                 <img onclick=toggleAddCustomerWindow() class="addCustomer" src="images/vectors/add_customer_x2.svg"
@@ -392,42 +410,42 @@
             <div class="customerDetails center my-2">
                 <div class="detailSlot">
                     <p class="key">Customer ID</p>
-                    <p class="value">C0003</p>
+                    <p id="customerID" class="value">C0003</p>
                 </div>
                 <div class="detailSlot">
                     <p class="key">Town</p>
-                    <p class="value">Kalagedihena</p>
+                    <p id="customerTown" class="value">Kalagedihena</p>
                 </div>
                 <div class="detailSlot">
                     <p class="key">Customer Name</p>
-                    <p class="value">Charith Jayasanka</p>
+                    <p id="customerName" class="value">Charith Jayasanka</p>
                 </div>
                 <div class="detailSlot">
                     <p class="key">Email</p>
-                    <p class="value">charith@gmail.com</p>
+                    <p id="customerEmail" class="value">charith@gmail.com</p>
                 </div>
                 <div class="detailSlot">
                     <p class="key">Phone Number</p>
-                    <p class="value">072 976 30 93</p>
+                    <p id="customerNumber" class="value">072 976 30 93</p>
                 </div>
                 <div class="detailSlot">
                     <p class="key">Total Orders</p>
-                    <p class="value">$23 400</p>
+                    <p id="customerOrders" class="value">$23 400</p>
                 </div>
             </div>
 
             <div class="totalCalculation">
                 <div class="calcItem">
                     <p class="calcKey">Sub Total</p>
-                    <p class="calcvalue">540</p>
+                    <p id="subTotalText" class="calcvalue">000</p>
                 </div>
                 <div class="calcItem">
                     <p class="calcKey">Discount</p>
-                    <p class="calcvalue">-50</p>
+                    <p id="discountText" class="calcvalue">(00)</p>
                 </div>
                 <div class="calcItem">
                     <p class="calcKey">Tax</p>
-                    <p class="calcvalue">-50</p>
+                    <p id="taxText" class="calcvalue">00</p>
                 </div>
                 <div class="calcItem total">
                     <p class="calcKey">Total</p>
@@ -477,5 +495,7 @@
 
 
 </script>
+
+<script type="module" defer src="js/CustomerSuggestionController.js"></script>
 
 </html>

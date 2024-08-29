@@ -96,11 +96,14 @@ export default class ItemCard {
 
         this.plusButton.addEventListener('click', () => {
             if (this.count > 0) {
-                this.product.count--;
+                // this.product.count--;
                 this.count--;
                 console.log("this is procutcard : " + this);
                 this.#cart.addProducts(this)
-                this.countDisplay.innerHTML = this.product.count;
+
+            }
+            else {
+                alert(`Not enough ${this.product.name} in the the store to add to the cart.`)
             }
             this.checkStockWarnings();
         });

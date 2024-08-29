@@ -1,4 +1,5 @@
 import CartItem from './cartItem.js';
+import Customer from './Customer.js';
 import ItemCard from './displayProductCard.js';
 
 export default class Cart {
@@ -14,6 +15,9 @@ export default class Cart {
         Cart.cartItemDisplayArea = document.getElementById('cartItemDisplayArea');
         this.finalCartPrice = document.getElementById('finalCartPrice');
         this.payNowButton = document.getElementById('payNowButton');
+        this.cartDiscountText = document.getElementById('discountText');
+        this.cartSubTotalText = document.getElementById('subTotalText');
+        this.cartTaxText = document.getElementById('taxText');
         this.payNowButton.addEventListener('click', () => {
             this.getCartDetails();
         })
@@ -45,6 +49,7 @@ export default class Cart {
         }
         const item = new CartItem(productDisplayCard);
         Cart.cartItemDisplayArea.appendChild(item.pushCartItem());
+        item.changeCartCount(1);
         console.log(this.products);
         this.calculateCartFinalPrice();
     }
@@ -56,43 +61,63 @@ export default class Cart {
         // });
     }
     calculateCartFinalPrice() {
-        // const prices = document.getElementsByClassName('itemPrice');
-        // let finalPrice = Array.from(prices).reduce((total, price) => {
-        //     return total + parseFloat(price.innerText.substring(1));
-        // }, 0);
-
-        // this.finalCartPrice.innerText = `$ ${finalPrice.toFixed(2)}`;
 
         let items = CartItem.cartItems;
         let subTotal = 0;
         let totalDiscount = 0;
+        let tax = 0;
 
         items.forEach(item => {
-            subTotal = item.product.price * item.count;
+            subTotal += item.product.price * item.count;
             let discount = item.product.price * item.product.discount * 0.01;
-            totalDiscount = discount * item.count;
+            totalDiscount += discount * item.count;
 
         });
+        this.cartSubTotalText.textContent = `(${subTotal})`;
+        this.cartDiscountText.textContent = `(${totalDiscount})`;
+        tax = (subTotal - totalDiscount) * 0.1;
+        this.cartTaxText.textContent = `${tax.toFixed(2)}`
+        let finalCartPriceValue = subTotal - totalDiscount + tax;
+        this.finalCartPrice.innerText = `$ ${(finalCartPriceValue).toFixed(2)}`
 
-        this.finalCartPrice.innerText = `$ ${subTotal.toFixed(2)}`
-
-
+        return {
+            "subTotal": subTotal,
+            "totalDiscount": totalDiscount,
+            "tax": tax,
+            "finalCartPrice": this.finalCartPrice,
+            "customer": this.customer
+        }
     }
 
 
     getCartDetails() {
-        const items = document.querySelectorAll('.orderItem');
-        items.forEach(item => {
-            // console.log(item.product.id)
-            console.log(item.product.count)
-            console.log("clickd on pay now")
-        });
+        const payNowObj = {
+            "finalValues": this.calculateCartFinalPrice(),
+            "cartItems": CartItem.cartItems
+
+        }
+        const jsonPayNow = JSON.stringify(payNowObj);
+        localStorage.setItem("currentOrder", jsonPayNow);
+
+        window.location.href = './payNow.html';
     }
 
 
     static removeItem(id) {
         let element = document.getElementById(id);
         Cart.cartItemDisplayArea.removeChild(element)
+    }
+
+
+    fillCustomerData(jsonCustomer) {
+        let customer = Customer.generateCustomer(jsonCustomer);
+        document.getElementById("customerID").innerText = customer.id;
+        document.getElementById("customerTown").innerText = customer.city;
+        document.getElementById("customerName").innerText = customer.getFullName();
+        document.getElementById("customerEmail").innerText = customer.email;
+        document.getElementById("customerNumber").innerText = customer.phoneNumber;
+        document.getElementById("customerOrders").innerText = customer.getAllOrderValue();
+        this.customer = customer;
     }
 
 

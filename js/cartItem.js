@@ -5,9 +5,10 @@ export default class CartItem {
     static cartItems = [];
     count = 0;
     id = null;
+    itemPrice = null;
     constructor(normalCard) {
         this.product = normalCard.product;
-        this.count++;
+        this.count;
         this.normalCard = normalCard;
         CartItem.cartItems.push(this)
     }
@@ -50,7 +51,7 @@ export default class CartItem {
         // Create the count div
         this.countText = document.createElement('div');
         this.countText.classList.add('count', 'flex', 'center');
-        this.countText.textContent = '1';
+        this.countText.textContent = '0';
 
         // Create the minus button
         let minus = document.createElement('div');
@@ -73,22 +74,26 @@ export default class CartItem {
         countChangeHolder.appendChild(countChange);
 
         // Create the item price div
-        let itemPrice = document.createElement('div');
-        itemPrice.classList.add('itemPrice', 'price', 'p-2', 'h2');
-        itemPrice.textContent = `$${product.price}`;
+        this.itemPrice = document.createElement('div');
+        this.itemPrice.classList.add('itemPrice', 'price', 'p-2', 'h2');
+        this.itemPrice.textContent = `$${product.price}`;
 
         // Append all elements to the outer container
         outer.appendChild(img);
         outer.appendChild(itemName);
         outer.appendChild(countChangeHolder);
-        outer.appendChild(itemPrice);
+        outer.appendChild(this.itemPrice);
 
         return outer;
     }
 
 
     changeCartCount(change) {
-        if (this.count + change <= 0) {
+        if (change == 1 && this.product.count <= 0) {
+            alert(`Not enough ${this.product.name} in the store to add to the cart`);
+            return;
+        }
+        else if (this.count + change <= 0) {
             Cart.removeItem(this.id);
             CartItem.cartItems = CartItem.cartItems.filter(item => item !== this);
             this.product.count -= change;
@@ -100,11 +105,19 @@ export default class CartItem {
             console.log('changeing')
             this.product.count -= change;
             this.normalCard.update();
+        } else if (change == -1 && this.product.count == 0) {
+            this.product.count++;
+            this.count += change;
+            this.countText.textContent = this.count || "1";
+            this.normalCard.update();
         }
-
+        this.updateCartItemPrice();
         let cart = new Cart();
         cart.calculateCartFinalPrice();
 
     }
 
+    updateCartItemPrice() {
+        this.itemPrice.textContent = `$${this.count * this.product.price}`;
+    }
 }
