@@ -27,6 +27,16 @@
     margin: 2px;
     padding: 10px;
     display: none;
+
+}
+
+.navButtons {
+    div {
+        min-width: 30px;
+        height: 3px;
+        background-color: black;
+        margin: 5px 1px;
+    }
 }
 
 .cartCloseButton {
@@ -73,6 +83,7 @@
     .itemCard {
         width: 90%;
         margin: auto !important;
+        margin-bottom: 10px !important;
 
     }
 

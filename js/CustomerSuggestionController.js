@@ -51,6 +51,7 @@ export default class CustomerSuggestionController {
         suggest.addEventListener('click', () => {
             this.input.value = fullName;
             new Cart().fillCustomerData(customer);
+            //console.log(customer);
             this.dropdown.style.display = "none";
         });
 

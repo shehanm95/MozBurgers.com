@@ -8,7 +8,7 @@ export default class Customer {
         this.email = email;
         this.birthday = birthday;
         this.address = address;
-        this.address = phoneNumber;
+        this.phoneNumber = phoneNumber;
         this.city = city;
         this.orders = []
     }

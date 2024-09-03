@@ -527,6 +527,7 @@ main {
     background-color: var(--lightFont);
     border-radius: 10px;
     box-shadow: 0 0 7px 0 rgba(128, 128, 128, 0.66);
+    margin-bottom: 10px !important;
 }
 
 /* ======================================= Custom form field settings =================================== */

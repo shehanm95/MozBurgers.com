@@ -30,10 +30,10 @@ export default class CustomerController {
 
 
     saveCustomer() {
-        console.log('clicked');
         let customer = new Customer(this.firstNameTxt.value, this.lastNameTxt.value, this.emailTxt.value, this.birthdayTxt.value, this.addressTxt.value, this.cityTxt.value)
-        console.log(customer);
+        console.log('address  : ' + this.addressTxt.value);
+        //console.log(customer);
         new Database().addCustomer(customer);
-        console.log(localStorage.getItem("customerList"))
+        // console.log(localStorage.getItem("customerList"))
     }
 }

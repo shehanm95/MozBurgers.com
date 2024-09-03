@@ -77,14 +77,14 @@ export default class Cart {
         this.cartDiscountText.textContent = `(${totalDiscount})`;
         tax = (subTotal - totalDiscount) * 0.1;
         this.cartTaxText.textContent = `${tax.toFixed(2)}`
-        let finalCartPriceValue = subTotal - totalDiscount + tax;
-        this.finalCartPrice.innerText = `$ ${(finalCartPriceValue).toFixed(2)}`
+        this.finalCartPriceValue = subTotal - totalDiscount + tax;
+        this.finalCartPrice.innerText = `$ ${(this.finalCartPriceValue).toFixed(2)}`
 
         return {
             "subTotal": subTotal,
             "totalDiscount": totalDiscount,
             "tax": tax,
-            "finalCartPrice": this.finalCartPrice,
+            "finalCartPrice": this.finalCartPriceValue,
             "customer": this.customer
         }
     }
@@ -110,7 +110,9 @@ export default class Cart {
 
 
     fillCustomerData(jsonCustomer) {
+        // console.log(jsonCustomer.address);
         let customer = Customer.generateCustomer(jsonCustomer);
+        // console.log(customer);
         document.getElementById("customerID").innerText = customer.id;
         document.getElementById("customerTown").innerText = customer.city;
         document.getElementById("customerName").innerText = customer.getFullName();
